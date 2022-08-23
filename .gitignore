@@ -6,3 +6,9 @@ __pycache__
 db.sqlite3
 media
 *.DjangoStudyMaterial
+
+*~
+__pycache__
+venv
+/static
+.DS_Store
