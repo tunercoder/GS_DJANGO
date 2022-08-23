@@ -1,0 +1,23 @@
+{% load cache %}
+<!DOCTYPE html>
+<html> 
+    <head>
+        <style>
+			.success{
+				color:green;
+			}
+		</style>
+    </head>
+	<body>
+
+		<h1>Course 1</h1>
+        <h1>Course 12</h1>
+       {% cache 40 Course %}
+	   	<h1>Course 3</h1>
+		   <h1>Course 53</h1>
+	   {% endcache Course %}
+
+       
+	</body>
+</html>
+

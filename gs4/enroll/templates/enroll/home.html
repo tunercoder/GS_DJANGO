@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <style>
+            th,td {
+                border : 1px black solid;
+            }
+        </style>
+    </head>
+	<body>
+		<h1>All Detail Page</h1>
+		{% if user  %}
+			<table>
+             <tr>
+                <th>id</th>
+                <th>Name</th> 
+                <th>Email</th> 
+                <th>Comment</th>
+            </tr>
+			{% for user in user %}
+                <tr>
+                    <td>{{user.id}}</td> 
+                    <td><a href="{% url 'userdetail' user.id %}">{{user.name}}</a></td> 
+                    <td>{{user.email}}</td> 
+                    <td>{{user.comment}}</td> 
+                </tr>
+			{% endfor %}
+            </table>
+		{% else %}
+			<h1>No Data</h1>
+		{% endif %}
+
+	</body>
+</html>
+

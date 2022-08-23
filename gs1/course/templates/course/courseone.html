@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+<head>
+<title>{{title}}</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <p>Course {{cname}}</p>
+    <img src="{% static 'images/pic1.jpg' %}" alt = "django image"/>
+
+    <img src="{% get_static_prefix %}images/pic1.jpg" alt = "django image"/>
+    <form action="">
+        <input type="button" value="click me" onclick="disp()" />
+    </form>
+    <script src="{% static 'js/alt.js' %}"> </script>
+</body>
+</html>

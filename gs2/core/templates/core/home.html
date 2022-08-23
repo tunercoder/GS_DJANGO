@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ block.super }} Home page{% endblock title %}
+<i class="fa-thin fa-alien"></i>
+<i class="fa-solid fa-broom-ball"></i>
+{% block content %}
+This is home page content....
+{% include 'core/topcourse.html' with p='Hindi' %}
+{% endblock content %}
+

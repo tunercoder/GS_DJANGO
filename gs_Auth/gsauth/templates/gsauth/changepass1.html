@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <style>
+			.success{
+				color:green;
+			}
+		</style>
+    </head>
+	<body>
+        <h1> Change Password without old Form :</h1>
+        <form action="" method="post" novalidate >
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            {% endif %}
+            
+            
+            {% for fm in form %}
+                {{ fm.label_tag }} {{ fm }} {{ fm.errors }}<br></br>
+            {% endfor %}
+            
+		    <!--{{ form.as_p }}-->
+            <input type="submit" name ="submit" value="Submit" />
+        </form>
+        <a href="{% url 'login' %}">login</a>
+	</body>
+</html>
+
