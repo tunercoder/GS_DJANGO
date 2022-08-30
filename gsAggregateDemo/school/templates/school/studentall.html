@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		<h1>Student information</h1>
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+<table>
+
+		
+		<th>Name</th>
+		<th>Roll</th>
+		<th>Marks</th>
+		<th>City</th>
+		<th>Pass date</th>
+		{% for stu in students %}
+		<tr>
+		<td>{{stu.name}}</td>
+		<td>{{stu.roll}}</td>
+		<td>{{stu.marks}}</td>
+		<td>{{stu.city}}</td>
+		<td>{{stu.pass_date}}</td>
+		</tr>
+		{% endfor %}
+		
+</table> 
+		<h1>Average context is: {{ average }}</h1>
+		<h1>Average value is: {{ average.marks__avg }}</h1>   
+
+		<h1>sum context is: {{ sum }}</h1>
+		<h1>sum value is: {{ sum.marks__sum }}</h1>   
+
+		<h1>min context is: {{ min }}</h1>
+		<h1>min value is: {{ min.marks__min }}</h1>   
+
+		<h1>max context is: {{ max }}</h1>
+		<h1>max value is: {{ max.marks__max }}</h1>   
+
+		<h1>count context is: {{ count }}</h1>
+		<h1>count value is: {{ count.marks__count }}</h1>   
+	</body>
+</html>
+
