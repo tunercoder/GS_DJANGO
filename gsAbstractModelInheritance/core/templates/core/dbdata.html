@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		<h1>DB Information</h1>
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<table>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Fees</th>
+			{% for stu in students %}
+			<tr>
+				<td>{{stu.name}}</td>
+				<td>{{stu.age}}</td>
+				<td>{{stu.fees}}</td>
+			</tr>
+			{% endfor %}
+		</table>    
+		<table>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Fees</th>
+			<th>Date</th>
+			{% for teach in teachers %}
+			<tr>
+				<td>{{teach.name}}</td>
+				<td>{{teach.age}}</td>
+				<td>{{teach.salary}}</td>
+				<td>{{teach.date}}</td>
+			</tr>
+			{% endfor %}
+		</table> 
+ 
+		<table>
+			<th>Name</th>
+			<th>Age</th>
+			<th>payment</th>
+			<th>Date</th>
+			{% for con in contractors %}
+			<tr>
+				<td>{{con.name}}</td>
+				<td>{{con.age}}</td>
+				<td>{{con.payment}}</td>
+				<td>{{con.date}}</td>
+			</tr>
+			{% endfor %}
+		</table> 
+	</body>
+</html>
+

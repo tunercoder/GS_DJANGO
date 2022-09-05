@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		<h1>DB Information</h1>
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<table>
+			<th>Username</th>
+			<th>Cat</th>
+			<th>post_title</th>
+			<th>post_publish_date</th>
+			
+			
+			{% for con in post %}
+			<tr>
+				<td>{{con.user}}</td>
+				<td>{{con.post_cat}}</td>
+				<td>{{con.post_title}}</td>
+				<td>{{con.post_publish_date}}</td>
+			</tr>
+			{% endfor %}
+		</table>   
+		
+	</body>
+</html>
+

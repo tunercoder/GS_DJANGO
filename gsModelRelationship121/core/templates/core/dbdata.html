@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		<h1>DB Information</h1>
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<table>
+			<th>Name</th>
+			<th>Roll</th>
+			<th>fees</th>
+			
+			
+			{% for con in std %}
+			<tr>
+				<td>{{con.name}}</td>
+				<td>{{con.roll}}</td>
+				<td>{{con.fees}}</td>
+			</tr>
+			{% endfor %}
+		</table>   
+		
+	</body>
+</html>
+
