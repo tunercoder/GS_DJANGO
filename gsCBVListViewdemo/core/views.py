@@ -36,6 +36,5 @@ class StudentDetailView(DetailView):
 
     def get_context_data(self, **kwargs): #modification in context dictionary content can be done here
         context = super().get_context_data(**kwargs)
-        
         context["all_other"] = Student.objects.all()
         return context

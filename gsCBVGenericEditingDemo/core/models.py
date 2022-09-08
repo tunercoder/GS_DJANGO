@@ -9,7 +9,7 @@ class Student(models.Model):
 
     def get_absolute_url(self):
         return reverse("thankyou")
-        
-    # def get_absolute_url(self):
+
+    # def get_absolute_url(self): 
     #     return reverse("detail", kwargs={"pk": self.pk})
     

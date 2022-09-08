@@ -3,6 +3,8 @@ from django.views.generic.edit import FormView,CreateView
 from django.views.generic import TemplateView
 from .forms import ContactForm
 from .models import Student
+from django import forms
+from .forms import StudentForm
 
 
 class ContactFormView(FormView):
@@ -21,9 +23,23 @@ class ThankyouView(TemplateView):
     template_name='core/thankyou.html'
     
 
+# class StudentCreateView(CreateView):
+#     model= Student
+#     fields ="__all__"
+#     # success_url='/thankyou/'
+
+#     def get_form(self):#used to add any form field classes attributes same as form and modelform
+#         form =super().get_form()
+#         form.fields['name'].widget=forms.TextInput(attrs={'class':"myclass"})
+#         form.fields['password'].widget=forms.PasswordInput(attrs={'class':"myclass"})
+#         return form
+
+
+#second way to define form is by using model form and in this case we are applying same classes on fields of form by model form
 class StudentCreateView(CreateView):
-    model= Student
-    fields ="__all__"
-    # success_url='/thankyou/'
+    form_class=StudentForm
+    template_name='core/student_form.html'
+    success_url='/thankyou/'
+
 
     
