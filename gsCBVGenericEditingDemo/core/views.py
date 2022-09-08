@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import FormView,CreateView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,UpdateView,DeleteView
 from .forms import ContactForm
 from .models import Student
 from django import forms
@@ -41,5 +41,13 @@ class StudentCreateView(CreateView):
     template_name='core/student_form.html'
     success_url='/thankyou/'
 
+class StudentUpdateView(UpdateView):
+    model= Student
+    fields ="__all__"
+    success_url='/thankyou/'
+
+class StudentDeleteView(DeleteView):
+    model= Student
+    success_url='/studentcreate/'
 
     
