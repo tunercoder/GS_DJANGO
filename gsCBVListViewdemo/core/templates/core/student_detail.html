@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		<h1>Student Detail Information</h1>
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<h1>Student Detail page</h1>
+		
+		
+		{{ object.name }}|| {{ object.roll }} || {{ object.age }}<br>
+		
+        
+        {% for student in all_other %}
+		<li>
+			<a href={% url 'studentdetail' student.id %}>{{ student.name }}</a>
+		</li>
+		{% endfor %}
+		
+	</body>
+</html>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		<h1>Student Information</h1>
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<h1>Student list page</h1>
+		
+		{% for student in student_list %}
+			{{ student.name }}|| {{ student.roll }} || {{ student.age }}<br>
+		{% endfor %}
+		
+	</body>
+</html>
+
