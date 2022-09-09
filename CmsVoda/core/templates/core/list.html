@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<h1>Data from db is:</h1>
+		{% for record in data %}
+            {{record.msisdn}}|{{record.date}}|{{record.smstext}}<br>
+        {% endfor %}
+	</body>
+</html>
+

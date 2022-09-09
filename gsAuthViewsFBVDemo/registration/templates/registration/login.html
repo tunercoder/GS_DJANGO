@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+		
+        <style>
+			table,th,td,tr
+			{
+			border: 1px black solid;
+			}
+		</style>
+    </head>
+	<body>
+		<h1>Login here:</h1>
+        <form action="" method="post" novalidate>
+            {%csrf_token%}
+		{{ form.as_p }}
+        <input type="submit" value="login">
+        </form>
+        <a href="{% url 'password_reset' %}">password reset</a>
+	</body>
+</html>
+
