@@ -52,9 +52,10 @@ def student_list(request):
     # qs=Student.objects.filter(name='chiku') | Student.objects.filter(roll=1)
     qs=Student.objects.filter(Q(name='chiku') | Q(roll=1))  
 
+    qs=Student.objects.all().order_by('-pass_date__week_day')
 
 
-
+    
 
     print(qs.query,qs)
     return render(request,'school/studentall.html',{'students':qs})
